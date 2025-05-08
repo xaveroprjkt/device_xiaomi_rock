@@ -167,9 +167,9 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_CACHEIMAGE_PARTITION_SIZE := 136314880
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 67108864
-BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := erofs
 
@@ -193,7 +193,7 @@ BOARD_MTK_DYNAMIC_PARTITIONS_PARTITION_LIST  := system system_ext product vendor
 BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := mtk_dynamic_partitions
 
--include vendor/lineage/config/BoardConfigReservedSize.mk
+-include vendor/aosp/config/BoardConfigReservedSize.mk
 
 # Platform
 BOARD_VENDOR := xiaomi
@@ -229,7 +229,7 @@ BOARD_VNDK_VERSION := current
 
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-	vendor/lineage/config/device_framework_matrix.xml \
+	vendor/aosp/config/device_framework_matrix.xml \
 	hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml \
 	hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml \
 	$(DEVICE_PATH)/config/vintf/framework_compatibility_matrix.xml
