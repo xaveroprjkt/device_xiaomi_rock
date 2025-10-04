@@ -53,6 +53,7 @@ module = ExtractUtilsModule(
     'xiaomi',
     blob_fixups=blob_fixups,
     check_elf=False,
+    add_firmware_proprietary_file=True,
 )
 
 if __name__ == '__main__':
