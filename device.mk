@@ -209,9 +209,6 @@ PRODUCT_COPY_FILES += \
 
 # keymint
 PRODUCT_PACKAGES += \
-    android.hardware.security.keymint-V1-ndk_platform.vendor \
-    android.hardware.security.secureclock-V1-ndk_platform.vendor \
-    android.hardware.security.sharedsecret-V1-ndk_platform.vendor \
     libcppbor_external.vendor
 
 # Secure Element
@@ -236,7 +233,7 @@ PRODUCT_COPY_FILES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
+    android.hardware.wifi-service \
     hostapd \
     wpa_supplicant \
     android.hardware.tetheroffload.control@1.1.vendor \
@@ -349,6 +346,8 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
 	$(LOCAL_PATH) \
+        hardware/lineage/interfaces/power-libperfmgr \
+        hardware/mediatek/libmtkperf_client \
 	hardware/google/interfaces \
 	hardware/google/pixel \
 	hardware/mediatek \
