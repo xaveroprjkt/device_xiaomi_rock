@@ -102,7 +102,8 @@ TARGET_SCREEN_DENSITY := 440
 VENDOR_SECURITY_PATCH := 2023-12-01
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_rock
+#$(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):init_xiaomi_rock)
+$(call soong_config_set,libinit,vendor_init_lib,init_xiaomi_rock)
 TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_rock
 
 # Kernel Offset
@@ -225,14 +226,13 @@ SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
+#TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # Treble VNDK
 BOARD_VNDK_VERSION := current
 
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-	vendor/afterlife/config/device_framework_matrix.xml \
 	$(DEVICE_PATH)/config/vintf/framework_compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/config/vintf/manifest.xml
 DEVICE_MATRIX_FILE += $(DEVICE_PATH)/config/vintf/compatibility_matrix.xml

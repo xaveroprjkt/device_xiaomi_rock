@@ -36,19 +36,21 @@ lib_fixups: lib_fixups_user_type = {
 blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libsource.so': blob_fixup()
     .add_needed('libui_shim.so'),
-    'system_ext/lib64/libsink.so': blob_fixup()
-    .add_needed('libshim_sink.so'),
+    'system_ext/lib64/libimsma.so': blob_fixup()
+     .replace_needed('libsink.so', 'libsink-mtk.so'),
+    'system_ext/lib64/libsink-mtk.so': blob_fixup()
+     .add_needed('libaudioclient_shim.so'),
     'vendor/bin/mtk_agpsd': blob_fixup()
-    .replace_needed('libcrypto.so', 'libcrypto-v32.so'),
+    .replace_needed('libcrypto.so', 'libcrypto-v33.so'),
     'vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b': blob_fixup()
     .replace_needed('libavservices_minijail_vendor.so', 'libavservices_minijail.so')
-    .add_needed('libstagefright_foundation-v32.so'),
+    .add_needed('libstagefright_foundation-v33.so'),
     'vendor/bin/hw/android.hardware.vibrator-service.mediatek': blob_fixup()
     .replace_needed('android.hardware.vibrator-V2-ndk_platform.so', 'android.hardware.vibrator-V2-ndk.so'),
     'vendor/bin/hw/android.hardware.lights-service.mediatek': blob_fixup()
     .replace_needed('android.hardware.light-V1-ndk_platform.so', 'android.hardware.light-V1-ndk.so'),
     'vendor/bin/hw/android.hardware.security.keymint@1.0-service.beanpod': blob_fixup()
-	.replace_needed('android.hardware.security.keymint-V1-ndk_platform.so', 'android.hardware.security.keymint-V1-ndk.so')
+	.replace_needed('android.hardware.security.keymint-V1-ndk_platform.so', 'android.hardware.security.keymint-V4-ndk.so')
 	.replace_needed('android.hardware.security.sharedsecret-V1-ndk_platform.so', 'android.hardware.security.sharedsecret-V1-ndk.so')
 	.replace_needed('android.hardware.security.secureclock-V1-ndk_platform.so', 'android.hardware.security.secureclock-V1-ndk.so')
 	.add_needed('android.hardware.security.rkp-V3-ndk.so'),

@@ -8,7 +8,7 @@
 /dev/block/platform/bootdevice/by-name/preloader_raw_b                                                      u:object_r:preloader_raw_block_device:s0
 
 # Power
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.xiaomi-libperfmgr                          u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr                          u:object_r:hal_power_default_exec:s0
 
 # Graphics
 /sys/devices/virtual/mi_display/disp_feature/disp-DSI-+[0-1](/.*)?                                          u:object_r:vendor_sysfs_displayfeature:s0
